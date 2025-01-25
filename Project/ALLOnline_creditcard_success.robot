@@ -37,8 +37,8 @@ ${NUMBER_PRODUCT}    2
     Wait Until Element Is Visible    xpath=//*[@id="alert-cookie-gdpr-allonline__button"]
     Click Element    xpath=//*[@id="alert-cookie-gdpr-allonline__button"]
     Click Element    xpath=//*[@id="page"]/header/div[4]/div/div/div/ul/li[4]/a
-    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[4]/input    nros.social@gmail.com
-    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[5]/input    497@Cpall
+    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[4]/input    Mockup@gmail.com
+    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[5]/input    mock@Cpall
     Click Element    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[6]/a[1]
     Wait Until Element Is Visible   xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div[3]/div/button[2]
     Click Element    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div[3]/div/button[2]
