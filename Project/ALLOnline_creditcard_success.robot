@@ -18,7 +18,7 @@ ${TOTAL}    ฿ 220
 *** Test Cases ***
 ทดสอบ สินค้า creditcard สำเร็จ
     เข้าสู่ระบบและปิดคุกกี้
-    นำเอาสินค้าเก่าออก
+    # นำเอาสินค้าเก่าออก
     ค้นหาสินค้าและแสดงรายการสินค้า
     ตรวจสอบผลการค้นหา
     เลือกดูสินค้า
@@ -123,6 +123,7 @@ ${TOTAL}    ฿ 220
     Click Element    xpath=//*[contains(@id, "select2-new-address-sub-district-result") and text()="บางปลา"]
     Wait Until Element Is Visible   id:selected-location    10
     Click Element    id:selected-location
+    # ยืนยันที่อยู่
     # Wait Until Element Is Visible   id:conf-dif-addr    10
     # Click Element    id:conf-dif-addr
     Wait Until Element Is Visible   id:new-address-postal-code
