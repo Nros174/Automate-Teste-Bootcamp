@@ -10,8 +10,10 @@ ${PRICE_LOCATOR}    //*[@id="page"]/div[2]/div[2]/div/div/div[2]/div/div/div/div
 ${PRODUCT_NAME}    ยำยำช้างน้อย รสบาร์บีคิว 120 กรัม (20 กรัม X 6 ซอง)
 ${PRODUCT_PRICE}    ฿ 37
 ${PRODUCT_DETAIL_PIONT}    //*[@id="article-form"]/div[1]/div[3]/div/div[2]/div/span/span
-${PRODUCT_2_PRICE}     ฿ 74
-${NUMBER_PRODUCT}    2
+${PRODUCT_5_PRICE}     ฿ 185
+${NUMBER_PRODUCT}    5
+${SHIPPING_COST}    ฿ 35
+${TOTAL}    ฿ 220
 
 *** Test Cases ***
 ทดสอบ สินค้า creditcard สำเร็จ
@@ -37,8 +39,8 @@ ${NUMBER_PRODUCT}    2
     Wait Until Element Is Visible    xpath=//*[@id="alert-cookie-gdpr-allonline__button"]
     Click Element    xpath=//*[@id="alert-cookie-gdpr-allonline__button"]
     Click Element    xpath=//*[@id="page"]/header/div[4]/div/div/div/ul/li[4]/a
-    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[4]/input    mockup@gmail.com
-    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[5]/input    mock@Cpall
+    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[4]/input    nros.social@gmail.com
+    Input Text    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[5]/input    497@Cpall
     Click Element    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[6]/a[1]
     Wait Until Element Is Visible   xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div[3]/div/button[2]
     Click Element    xpath=//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div[3]/div/button[2]
@@ -70,7 +72,9 @@ ${NUMBER_PRODUCT}    2
     Element Should Contain    xpath=${PRODUCT_DETAIL_PIONT}    9 คะแนน
 
 เพิ่มจำนวนสินค้าที่ต้องการซื้อ
-    Click Element    xpath=//*[@id="article-form"]/div[2]/div[2]/div[1]/span[2]/a
+    FOR    ${index}    IN RANGE   4
+        Click Element    xpath=//*[@id="article-form"]/div[2]/div[2]/div[1]/span[2]/a
+    END
     Element Attribute Value Should Be   xpath=//*[@id="article-form"]/div[2]/div[2]/div[1]/input    value    ${NUMBER_PRODUCT} 
 
 เพิ่มสินค้าเข้ารถเข็น
@@ -79,8 +83,8 @@ ${NUMBER_PRODUCT}    2
     Wait Until Element Is Visible   xpath=//*[@id="basket-flyout-items"]/div
     Element Should Contain    xpath=//*[@id="basket-flyout-items"]/div/div[2]/div[1]    ${PRODUCT_NAME}
     Element Attribute Value Should Be   xpath=//*[@id="basket-flyout-items"]/div/div[2]/div[2]/div[1]/div/div/input    value    ${NUMBER_PRODUCT}
-    Element Should Contain    xpath=//*[@id="basket-flyout-items"]/div/div[2]/div[2]/div[2]    ${PRODUCT_2_PRICE}
-    Element Should Contain    xpath=//*[@id="mini-basket-val"]/li[4]/div[2]    ${PRODUCT_2_PRICE}
+    Element Should Contain    xpath=//*[@id="basket-flyout-items"]/div/div[2]/div[2]/div[2]    ${PRODUCT_5_PRICE}
+    Element Should Contain    xpath=//*[@id="mini-basket-val"]/li[4]/div[2]    ${PRODUCT_5_PRICE}
 
 สั่งซื้อสินค้า
     Click Element    xpath=//*[@id="mini-basket-val"]/li[5]/a[2]
@@ -117,10 +121,10 @@ ${NUMBER_PRODUCT}    2
     Input Text    xpath=//*[@class="select2-search__field"]    บางปลา
     Wait Until Element Is Visible   xpath=//*[contains(@id, "select2-new-address-sub-district-result") and text()="บางปลา"]
     Click Element    xpath=//*[contains(@id, "select2-new-address-sub-district-result") and text()="บางปลา"]
-    Wait Until Element Is Visible   id:selected-location
+    Wait Until Element Is Visible   id:selected-location    10
     Click Element    id:selected-location
-    Wait Until Element Is Visible   id:conf-dif-addr
-    Click Element    id:conf-dif-addr
+    # Wait Until Element Is Visible   id:conf-dif-addr    10
+    # Click Element    id:conf-dif-addr
     Wait Until Element Is Visible   id:new-address-postal-code
     Element Attribute Value Should Be   id:new-address-postal-code    value    10540
     Scroll Element Into View    id:continue-payment-btn
@@ -134,17 +138,17 @@ ${NUMBER_PRODUCT}    2
     Wait Until Element Is Visible    xpath=//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[2]    timeout=10
     Element Should Contain    xpath=//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[2]    ${PRODUCT_NAME}
     Element Should Contain    xpath=//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[3]    ${NUMBER_PRODUCT}
-    Element Should Contain    xpath=//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[4]    ${PRODUCT_2_PRICE}
-    Element Should Contain    xpath=//*[@id="js-invoice-details-tbody"]/tr[1]/td[2]    ${PRODUCT_2_PRICE}
-    Element Should Contain    xpath=//*[@id="js-invoice-details-tbody"]/tr[2]/td[2]/b    ฿ 25
-    Element Should Contain    xpath=//*[@id="totalAmount"]    ฿ 99
+    Element Should Contain    xpath=//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[4]    ${PRODUCT_5_PRICE}
+    Element Should Contain    xpath=//*[@id="js-invoice-details-tbody"]/tr[1]/td[2]    ${PRODUCT_5_PRICE}
+    Element Should Contain    xpath=//*[@id="js-invoice-details-tbody"]/tr[2]/td[2]/b    ${SHIPPING_COST}
+    Element Should Contain    xpath=//*[@id="totalAmount"]    ${TOTAL}
 
 ยืนยันสั่งซื้อสินค้า
     Click Element    xpath=//*[@id="stepModel"]/div[1]/div[2]/footer/div/div/button
 
 กรอกข้อมูลบัตรเครดิต
     Wait Until Element Is Visible    xpath=//*[@id="csModalContent"]/div[3]/div[2]/div[3]/span[2]    10
-    Element Should Contain    xpath=//*[@id="csModalContent"]/div[3]/div[2]/div[3]/span[2]    99.00
+    Element Should Contain    xpath=//*[@id="csModalContent"]/div[3]/div[2]/div[3]/span[2]    220.00
     Input Text    xpath=//*[@id="cardName"]        พันกร ชมจันทร์
     Input Text    xpath=//*[@id="cardNumber"]      4624697749177871
     Input Text    xpath=//*[@id="expiryDate"]      01/29
