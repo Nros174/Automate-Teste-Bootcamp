@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.10.11 on win32)" generated="2025-01-18T10:22:51.455702" rpa="false" schemaversion="5">
+<suite id="s1" name="Google1" source="D:\Works\etc\Automated Test\Day2\robotfreamwork_workshop\google\google1.robot">
+<test id="s1-t1" name="ทดสอบใส่ PIM ควรเจอ สถาบันการจัดการปัญญาภิวัฒน์" line="8">
+<kw name="เปิดเว็บเบราว์เซอร์และเข้า Google">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-18T10:22:51.876080" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>url=https://www.google.com</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-18T10:22:51.876080" elapsed="5.520423"/>
+</kw>
+<status status="PASS" start="2025-01-18T10:22:51.874951" elapsed="5.522549"/>
+</kw>
+<kw name="ใส่คำค้นหา">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-18T10:22:57.398501" level="INFO">Typing text 'PIM' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>PIM</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-18T10:22:57.397500" elapsed="0.087992"/>
+</kw>
+<status status="PASS" start="2025-01-18T10:22:57.397500" elapsed="0.087992"/>
+</kw>
+<kw name="กดปุ่ม Enter">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-01-18T10:22:57.486489" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg time="2025-01-18T10:22:57.486489" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg time="2025-01-18T10:22:57.486489" level="INFO">Releasing special key RETURN.</msg>
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-01-18T10:22:57.485492" elapsed="1.963921"/>
+</kw>
+<status status="PASS" start="2025-01-18T10:22:57.485492" elapsed="1.963921"/>
+</kw>
+<kw name="ตรวจสอบผลการค้นหา">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2025-01-18T10:23:04.560282" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-18T10:23:04.560804" level="FAIL">Text 'สถาบันการจัดการปัญญาภิวัฒน์' did not appear in 5 seconds.</msg>
+<arg>สถาบันการจัดการปัญญาภิวัฒน์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2025-01-18T10:22:59.450415" elapsed="5.148600">Text 'สถาบันการจัดการปัญญาภิวัฒน์' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-18T10:22:59.449413" elapsed="5.149602">Text 'สถาบันการจัดการปัญญาภิวัฒน์' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-18T10:22:51.873169" elapsed="12.726371">Text 'สถาบันการจัดการปัญญาภิวัฒน์' did not appear in 5 seconds.</status>
+</test>
+<status status="FAIL" start="2025-01-18T10:22:51.457703" elapsed="13.143413"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Google1">Google1</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-01-18T10:22:51.447162" level="WARN">Error in file 'D:\Works\etc\Automated Test\Day2\robotfreamwork_workshop\google\google1.robot' on line 1: Singular section headers like '*** Setting ***' are deprecated. Use plural format like '*** Settings ***' instead.</msg>
+</errors>
+</robot>

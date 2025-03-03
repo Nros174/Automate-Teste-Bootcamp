@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.10.11 on win32)" generated="2025-01-13T14:20:48.391058" rpa="false" schemaversion="5">
+<suite id="s1" name="Google7" source="d:\Works\etc\Automated Test\Day2\robotfreamwork_workshop\google\google7.robot">
+<kw name="เปิดเว็บเบราว์เซอร์" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-13T14:20:48.851216" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-13T14:20:48.851216" elapsed="1.701229"/>
+</kw>
+<status status="PASS" start="2025-01-13T14:20:48.851216" elapsed="1.701229"/>
+</kw>
+<test id="s1-t1" name="ทดสอบใส่ Testar ควรเจอ Testar" line="19">
+<kw name="เข้า Google" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-13T14:20:50.563283" level="INFO">Opening url 'https://www.google.com'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-13T14:20:50.560077" elapsed="1.636705"/>
+</kw>
+<status status="PASS" start="2025-01-13T14:20:50.560077" elapsed="1.636705"/>
+</kw>
+<kw name="ค้นหาและตรวจสอบ">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-13T14:20:52.199357" level="INFO">Typing text 'Testar' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>${คำค้น}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-13T14:20:52.199357" elapsed="0.170349"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-01-13T14:20:52.371341" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg time="2025-01-13T14:20:52.371790" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg time="2025-01-13T14:20:52.372350" level="INFO">Releasing special key RETURN.</msg>
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-01-13T14:20:52.370249" elapsed="1.383169"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${ผล}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-13T14:20:53.753418" elapsed="0.038435"/>
+</kw>
+<arg>Testar</arg>
+<arg>Testar</arg>
+<status status="PASS" start="2025-01-13T14:20:52.196782" elapsed="1.595071"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-13T14:20:53.791853" elapsed="2.215051"/>
+</kw>
+<status status="PASS" start="2025-01-13T14:20:50.552445" elapsed="5.456222"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-01-13T14:20:56.011405" elapsed="0.002643"/>
+</kw>
+<status status="PASS" start="2025-01-13T14:20:48.401051" elapsed="7.612997"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Google7">Google7</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-01-13T14:20:48.376629" level="WARN">Error in file 'd:\Works\etc\Automated Test\Day2\robotfreamwork_workshop\google\google7.robot' on line 1: Singular section headers like '*** Setting ***' are deprecated. Use plural format like '*** Settings ***' instead.</msg>
+</errors>
+</robot>
